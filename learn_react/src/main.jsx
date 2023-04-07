@@ -1,13 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Comment from "./component/comment";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)/*
-const element = <Welcome name="Mathieu"/>
+const comment = {
+  date: new Date(),
+  text: 'I hope you enjoy learning React!',
+  author: {
+    name: 'Hello Kitty',
+    avatarUrl: 'http://placekitten.com/g/64/64'
+  }
+};
 
-root.render(element);*/
+function App() {
+  return (
+    <Comment 
+    date = {comment.date}
+    text={comment.text}
+    author={comment.author}/>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<App />);
